@@ -8,6 +8,7 @@
 css_prefix: icon-custom-
 autowidth: true
 no_hash: true
+preprocessor_path: "../fontcustom/fonts"
 #debug: false
 #quiet: false
 
@@ -21,11 +22,13 @@ no_hash: true
 
 input:
   vectors: svg
+  templates: templates
 
 output:
   fonts: fonts
   css: css
   preview: preview
+  fontcustom-bootstrap.less: less
 
 
 # --------------------------------------------------------------------------- #
@@ -37,4 +40,4 @@ output:
 #   referenced by their base file name.
 # --------------------------------------------------------------------------- #
 
-templates: [ preview, bootstrap ]
+templates: [ preview, bootstrap, fontcustom-bootstrap.less ]
