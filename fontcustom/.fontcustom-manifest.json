@@ -1,0 +1,15 @@
+{
+  "fonts": [
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/fonts/fontcustom.ttf",
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/fonts/fontcustom.woff",
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/fonts/fontcustom.eot",
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/fonts/fontcustom.svg"
+  ],
+  "templates": [
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/preview/fontcustom-preview.html",
+    "/Users/achavez/Websites/riffstrap/font-riffstrap/css/fontcustom-bootstrap.css"
+  ],
+  "glyphs": [
+    "riff"
+  ]
+}
