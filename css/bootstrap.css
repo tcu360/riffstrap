@@ -3512,6 +3512,9 @@ li[class*=" icon-custom-"].icon-custom-large:before {
 .icon-custom-riff:before {
   content: "\f100";
 }
+.icon-custom-tcu:before {
+  content: "\f101";
+}
 .caret {
   display: inline-block;
   width: 0;
