@@ -66,6 +66,9 @@ li[class^="<%= @opts.css_prefix %>"].<%= @opts.css_prefix %>large:before, li[cla
   [class^="<%= @opts.css_prefix %>"] {
     margin-right: -.15em;
   }
+  [class^="<%= @opts.css_prefix %>"]:last-child {
+    margin-right: 0;
+  }
   &.colorized {
     .<%= @opts.css_prefix %>logo-360,
     .<%= @opts.css_prefix %>logo-riff {

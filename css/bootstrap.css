@@ -3533,6 +3533,9 @@ li[class*=" icon-custom-"].icon-custom-large:before {
 .icon-custom-logo-parts [class^="icon-custom-"] {
   margin-right: -0.15em;
 }
+.icon-custom-logo-parts [class^="icon-custom-"]:last-child {
+  margin-right: 0;
+}
 .icon-custom-logo-parts.colorized .icon-custom-logo-360,
 .icon-custom-logo-parts.colorized .icon-custom-logo-riff {
   color: #4d1979;
