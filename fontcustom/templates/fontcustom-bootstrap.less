@@ -60,3 +60,16 @@ li[class^="<%= @opts.css_prefix %>"].<%= @opts.css_prefix %>large:before, li[cla
 }
 <% @glyphs.each_with_index do |name, index| %>
 .<%= @opts.css_prefix + name %>:before { content: "\<%= (61696+index).to_s(16) %>"; }<% end %>
+
+// Special handling for when glyphs are combined to form 360 logo
+.<%= @opts.css_prefix %>logo-parts {
+  [class^="<%= @opts.css_prefix %>"] {
+    margin-right: -.15em;
+  }
+  &.colorized {
+    .<%= @opts.css_prefix %>logo-360,
+    .<%= @opts.css_prefix %>logo-riff {
+      color: @brand-primary;
+    }
+  }
+}

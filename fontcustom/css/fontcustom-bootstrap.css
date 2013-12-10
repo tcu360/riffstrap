@@ -60,5 +60,10 @@ li[class^="icon-custom-"].icon-custom-large:before, li[class*=" icon-custom-"].i
   text-indent: -1.333em;
 }
 
-.icon-custom-riff:before { content: "\f100"; }
-.icon-custom-tcu:before { content: "\f101"; }
+.icon-custom-logo-360:before { content: "\f100"; }
+.icon-custom-logo-alltcu:before { content: "\f101"; }
+.icon-custom-logo-riff:before { content: "\f102"; }
+.icon-custom-logo-tcu:before { content: "\f103"; }
+.icon-custom-logo:before { content: "\f104"; }
+.icon-custom-riff:before { content: "\f105"; }
+.icon-custom-tcu:before { content: "\f106"; }

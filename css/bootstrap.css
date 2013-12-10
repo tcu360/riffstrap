@@ -3509,11 +3509,33 @@ li[class^="icon-custom-"].icon-custom-large:before,
 li[class*=" icon-custom-"].icon-custom-large:before {
   text-indent: -1.333em;
 }
-.icon-custom-riff:before {
+.icon-custom-logo-360:before {
   content: "\f100";
 }
-.icon-custom-tcu:before {
+.icon-custom-logo-alltcu:before {
   content: "\f101";
+}
+.icon-custom-logo-riff:before {
+  content: "\f102";
+}
+.icon-custom-logo-tcu:before {
+  content: "\f103";
+}
+.icon-custom-logo:before {
+  content: "\f104";
+}
+.icon-custom-riff:before {
+  content: "\f105";
+}
+.icon-custom-tcu:before {
+  content: "\f106";
+}
+.icon-custom-logo-parts [class^="icon-custom-"] {
+  margin-right: -0.15em;
+}
+.icon-custom-logo-parts.colorized .icon-custom-logo-360,
+.icon-custom-logo-parts.colorized .icon-custom-logo-riff {
+  color: #4d1979;
 }
 .caret {
   display: inline-block;
