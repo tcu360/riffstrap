@@ -22,6 +22,34 @@ module.exports = function(grunt) {
       }
     },
 
+    // Concatenate and (sometimes) minify JavaScript
+    uglify: {
+      dev: {
+        options: {
+          compress: false,
+          beautify: true,
+          mangle: false,
+          preserveComments: 'all'
+        },
+        files: {
+          'dist/script.js': [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/js/**.js',
+            'src/script.js'
+          ],
+        }
+      },
+      prod: {
+        files: {
+          'dist/script.js': [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/js/**.js',
+            'src/script.js'
+          ],
+        }
+      }
+    },
+
     // Clean folders before running a build
     clean: [
       'build',
@@ -50,9 +78,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask('dev', ['clean', 'less:dev', 'copy:fonts']);
-  grunt.registerTask('prod', ['clean', 'less:prod', 'copy:fonts']);
+  grunt.registerTask('dev', ['clean', 'less:dev', 'uglify:dev', 'copy:fonts']);
+  grunt.registerTask('prod', ['clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
 
 };
