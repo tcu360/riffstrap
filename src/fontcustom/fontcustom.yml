@@ -8,7 +8,7 @@
 css_prefix: icon-custom-
 autowidth: true
 no_hash: true
-preprocessor_path: "../fontcustom/fonts"
+preprocessor_path: "../fonts"
 #debug: false
 #quiet: false
 
