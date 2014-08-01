@@ -3,7 +3,8 @@
 // unnecessary duplication.
 var scripts = [
   'bower_components/jquery/dist/jquery.js',
-  'bower_components/bootstrap/js/**.js',
+  'bower_components/bootstrap/js/modal.js',
+  'bower_components/bootstrap/js/transition.js',
   'src/script.js'
 ];
 
@@ -16,6 +17,11 @@ module.exports = function(grunt) {
 
     // Transpile LESS
     less: {
+      options: {
+        // See src/custom-bootstrap/bootstrap.less for an
+        // explanation of why this is line is necessary
+        paths: ['bower_components/bootstrap/less']
+      },
       dev: {
         files: {
           "dist/style.css": "src/style.less"
@@ -23,7 +29,8 @@ module.exports = function(grunt) {
       },
       prod: {
         options: {
-          compress: true
+          compress: true,
+          cleancss: true
         },
         files: {
           "dist/style.css": "src/style.less"
