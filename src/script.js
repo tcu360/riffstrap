@@ -1,1 +1,7 @@
-// Your custom JavaScript goes here
+(function($) {
+  'use strict';
+
+  // Your app JavaScript goes here
+
+
+}(jQuery));

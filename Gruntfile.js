@@ -1,3 +1,12 @@
+// The scripts to concatenate to form our single
+// dist/script.js file. Storing them here reduces
+// unnecessary duplication.
+var scripts = [
+  'bower_components/jquery/dist/jquery.js',
+  'bower_components/bootstrap/js/**.js',
+  'src/script.js'
+];
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -22,6 +31,9 @@ module.exports = function(grunt) {
       }
     },
 
+    // Run our JavaScript (but not bower scripts) through JSHint
+    jshint: ['src/script.js'],
+
     // Concatenate and (sometimes) minify JavaScript
     uglify: {
       dev: {
@@ -32,20 +44,12 @@ module.exports = function(grunt) {
           preserveComments: 'all'
         },
         files: {
-          'dist/script.js': [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/js/**.js',
-            'src/script.js'
-          ],
+          'dist/script.js': scripts
         }
       },
       prod: {
         files: {
-          'dist/script.js': [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/js/**.js',
-            'src/script.js'
-          ],
+          'dist/script.js': scripts
         }
       }
     },
@@ -79,9 +83,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task(s).
-  grunt.registerTask('dev', ['clean', 'less:dev', 'uglify:dev', 'copy:fonts']);
-  grunt.registerTask('prod', ['clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
+  grunt.registerTask('dev', ['jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts']);
+  grunt.registerTask('prod', ['jshint', 'clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
 
 };
