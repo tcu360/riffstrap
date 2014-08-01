@@ -55,6 +55,9 @@ module.exports = function(grunt) {
         }
       },
       prod: {
+        options: {
+          sourceMap: true
+        },
         files: {
           'dist/script.js': scripts
         }
