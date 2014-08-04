@@ -64,7 +64,7 @@ Add additional JavaScript files by editing the `scripts` array at the top of [`G
 
 To bring in additional libraries, you should use [Bower](http://bower.io/). For example, to add Tabletop.js you would type `bower install tabletop --save`. That would download Tabletop.js and add it as a dependency in [`bower.json`](bower.json). See the [Bower docs](http://bower.io/) for the `bower install` command for more info.
 
-Once you've added something using Bower, add it to your build just like you'd add your own code using the steps under [*Adding JavaScript and LESS files*](#adding-javaScript-and-less-files) above.
+Once you've added something using Bower, add it to your build just like you'd add your own code using the steps under [*Adding JavaScript and LESS files*](#adding-javascript-and-less-files) above.
 
 ### Readying for production
 
