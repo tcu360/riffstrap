@@ -40,6 +40,21 @@ module.exports = function(grunt) {
     // Run our JavaScript (but not bower scripts) through JSHint
     jshint: ['src/script.js'],
 
+    // Validate HTML
+    validation: {
+      options: {
+        reset: true,
+        stoponerror: false,
+        reportpath: false,
+        relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.'],
+        doctype: 'HTML5',
+        charset: 'utf-8'
+      },
+      files: {
+        src: ['index.html']
+      }
+    },
+
     // Concatenate and (sometimes) minify JavaScript
     uglify: {
       dev: {
@@ -110,10 +125,11 @@ module.exports = function(grunt) {
       },
       styles: {
         files: ['src/**/*.less', 'src/**/*.css'],
-        tasks: ['less']
+        tasks: ['less:dev']
       },
       markup: {
-        files: ['index.html']
+        files: ['index.html'],
+        tasks: ['validation']
       }
     },
 
@@ -137,9 +153,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-html-validation');
 
   // Default task(s).
-  grunt.registerTask('dev', ['jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts', 'concurrent']);
-  grunt.registerTask('prod', ['jshint', 'clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
+  grunt.registerTask('dev', ['validation', 'jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts', 'concurrent']);
+  grunt.registerTask('prod', ['validation', 'jshint', 'clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
 
 };

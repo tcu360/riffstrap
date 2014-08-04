@@ -30,7 +30,7 @@ If that interests you, skip down to [Tool installation and configuration](#tool-
 
 Both Grunt and Bower require [Node.js](http://nodejs.org/). If you need to install Node.js, you can download an installer for your OS at [nodejs.org/download](http://nodejs.org/download/).
 
-Then, using Node's [NPM](https://www.npmjs.org/) (**N**ode **P**ackage **M**anager) command line tool, which is automatically installed with Node.js, install Grunt and Bower by running `npm install -g grunt bower`. That will install Grunt and Bower globally (`-g`) so they can now be used for any project.
+Then, using Node's [NPM](https://www.npmjs.org/) (**N**ode **P**ackage **M**anager) command line tool, which is automatically installed with Node.js, install Grunt and Bower by running `npm install -g grunt-cli bower`. That will install Grunt and Bower globally (`-g`) so they can now be used for any project.
 
 Next, in the Riffstrap directory, type `npm install`. This step will install all of the [plugins](http://gruntjs.com/plugins) that Grunt needs to do things like [transpile the LESS files](https://github.com/gruntjs/grunt-contrib-less) and [check your JavaScript](https://github.com/gruntjs/grunt-contrib-jshint) for errors.
 
@@ -40,13 +40,14 @@ All of the Grunt plugins (which are specified in `package.json`) are Node.js mod
 
 [`Gruntfiles.js`](Gruntfile.js) defines a [task](http://gruntjs.com/configuring-tasks) (`dev`), which you'll want to use during development. To run the task, simply type `grunt dev` at the command line from anywhere inside your app. When you do, you'll notice that several things happen:
 
+1. Your HTML in `index.html` is checked for errors using the [W3C Markup Validation Service](http://validator.w3.org/).
 1. Your JavaScript is [checked for erros](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L40-L41) using [JSHint](http://www.jshint.com/).
 2. The `dist/` and `fonts/` folders are [deleted](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L66-L70) (we're about to fill them again).
 3. Your .less [files are transpiled](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L17-L38) into a single CSS file at [`dist/style.css`](dist/style.css).
 4. Your JavaScript files are [concatenated, beautified and saved](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L43-L64) at [`dist/script.js`](dist/script.js) using [UglifyJS2](https://github.com/mishoo/UglifyJS2).
 5. Fonts are [copied](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L72-L85) into the `fonts/` directory.
 6. A lightweight [Web server is started](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L87-L127) and your app is opened in your default browser.
-7. All of your source files are [watched](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L100-L129) and reconcatenated/retranspiled each time a file is changed. The app in your Web browser will automatically reload each time a file is changed using livereload.
+7. All of your source files are [watched](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L100-L129) and checked for errors/reconcatenated/retranspiled each time a file is changed. The app in your Web browser will automatically reload each time a file is changed using livereload.
 
 Awesome, right?
 
