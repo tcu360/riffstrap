@@ -1,0 +1,76 @@
+//
+// == About this file ==
+//
+// This file is a slightly hacky way of doing custom
+// Bootstrap builds. Basically, this imports all of Bootstrap's
+// core .less files, just like Bootstrap's own bootstrap.less
+// file. Even though those core .less files aren't in this folder,
+// Grunt knows to find them in bower_components.
+//
+// You can comment out any file you don't want and when Grunt
+// does a build it'll exclude it. This keeps the files in
+// bower_components unaltered.
+//
+// You can also copy any of the .less files from bower_components
+// into this directory to customize them and they'll automatically
+// override the bower version.
+//
+// The first @import is important: It makes sure that we're
+// importing the bower version of varibles.less, not the one
+// we've overriden in src/custom-bootstrap.
+//
+// Note: If you update Bootstrap, you should check for changes
+// in bootstrap.less and merge them in here accordingly.
+//
+// --------------------------------------------------
+
+// Core variables and mixins
+@import "bower_components/bootstrap/less/variables.less";
+@import "mixins.less";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+// @import "glyphicons.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+@import "jumbotron.less";
+@import "thumbnails.less";
+@import "alerts.less";
+@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+@import "responsive-embed.less";
+@import "wells.less";
+@import "close.less";
+
+// Components w/ JavaScript
+@import "modals.less";
+@import "tooltip.less";
+@import "popovers.less";
+@import "carousel.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";

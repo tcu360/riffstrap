@@ -1,0 +1,126 @@
+//
+// == About this file ==
+//
+// Here's where we override Bootstrap's variables to give
+// everything a TCU 360 look. When these are @import'ed
+// into our style.less file they're brought in after
+// Bootstrap.
+//
+// Because LESS allows us to set variables retroactively,
+// we only include the variables here that we're overriding
+// and they clobber the default variables during
+// transpilation.
+//
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+
+@gray-light:             lighten(#000, 60%);   // #999
+@gray-lightest:          #f7f7f7;
+
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         #4d1979;
+
+@brand-blue:			#428bca;
+@brand-red:				#d9534f;
+@brand-green:			#5cb85c;
+@brand-cyan:			#5bc0de;
+@brand-orange:		#f0ad4e;
+@brand-brown:			#A57D00;
+
+// Colors for other brands (from brandcolors.net)
+@facebook:			#3b5998;
+@twitter:				#00acee;
+@google-plus:		#dd4b39;
+@instagram:			#3f729b;
+@pinterest:			#c8232c;
+@foursquare:		#25a0ca;
+@github:				#171515;
+
+
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  'Lato', sans-serif;
+
+@font-size-base:          16px;
+@font-size-large:         ceil(@font-size-base * 1.15); // ~19px
+
+@font-size-h1:            floor(@font-size-base * 3.25); // ~52px
+
+// Vanilla Bootstrap doesn't actually have these
+// font-weight-* variables, but Lato has so many that
+// it's nice to standardize.
+@font-weight-bold:		    900;
+@font-weight-semibold:	  700;
+@font-weight-light:       300;
+@font-weight-lightest:	  100;
+
+@headings-font-weight:    @font-weight-semibold;
+@headings-line-height:    1.1;
+
+
+// Iconography
+// -------------------------
+
+@icon-font-path:          "../fonts/";
+@icon-font-name:          "FontAwesome";
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+@navbar-margin-bottom:             0; /* default: @line-height-computed */
+@navbar-border-radius:             0;
+
+@navbar-default-bg:                rgba(255,255,255,0.92);
+@navbar-default-border:            rgba(0,0,0,0.4);
+
+// Navbar links
+@navbar-default-link-color:                #444;
+@navbar-default-link-active-color:         #333;
+@navbar-default-link-active-bg:            transparent;
+@navbar-default-link-disabled-color:       #ccc;
+@navbar-default-link-disabled-bg:          transparent;
+
+// Navbar toggle
+@navbar-default-toggle-icon-bar-bg:        #ccc;
+
+
+// Navs
+// -------------------------
+
+@nav-open-link-hover-color:                 #fff;
+
+
+// Form states and alerts
+// -------------------------
+
+@state-success-text:             #468847;
+@state-info-text:                #3a87ad;
+@state-warning-text:             #c09853;
+@state-danger-text:              #b94a48;
+
+
+// Modals
+// -------------------------
+
+@modal-inner-padding:         20px;
+
+
+// Panels
+// -------------------------
+
+@panel-border-radius:         0;
