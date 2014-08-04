@@ -46,7 +46,7 @@ All of the Grunt plugins (which are specified in `package.json`) are Node.js mod
 4. Your JavaScript files are [concatenated, beautified and saved](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L43-L64) at [`dist/script.js`](dist/script.js) using [UglifyJS2](https://github.com/mishoo/UglifyJS2).
 5. Fonts are [copied](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L72-L85) into the `fonts/` directory.
 6. A lightweight [Web server is started](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L87-L127) and your app is opened in your default browser.
-7. All of your source files are [watched](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L100-L129) and reconcatenated/retranspiled each time a file is changed. The app in your Web browser will automatically reload each time a file is changed using [livereload](http://livereload.com/).
+7. All of your source files are [watched](https://github.com/tcu360/riffstrap/blob/6ecbc91e5a98c38bdca9620a701cc34229817814/Gruntfile.js#L100-L129) and reconcatenated/retranspiled each time a file is changed. The app in your Web browser will automatically reload each time a file is changed using livereload.
 
 Awesome, right?
 
