@@ -22,7 +22,7 @@ There are several ways you can use Riffstrap in your project, from simply includ
 
 Riffstrap is already setup to work with Grunt and includes a lightweight development server, so it will serve as a great scaffolding for a single-page Web app. For example, using [Grunt](http://gruntjs.com/), it's setup to watch the files in the `src/` folder as you're working on them, check them for errors and transpile/compile them as you work on your app. When you're finished developing, it can even minify your files and package all of your app code for production.
 
-If that interests you, skip down to [Tool installation and configuration](#tool-installation-and-configuration). If you'd rather just include the bundled Bootstrap styles, fonts, etc. in your project then [download the zipped repository](https://github.com/tcu360/riffstrap/archive/gruntify.zip). The minified JavaScript and CSS files can be found in the `dist/` folder and the FontAwesome and FontCustom fonts are in the `fonts/` folder.
+If that interests you, skip down to [Tool installation and configuration](#tool-installation-and-configuration). If you'd rather just include the bundled Bootstrap styles, fonts, etc. in your project then [download the zipped repository](https://github.com/tcu360/riffstrap/archive/gruntify.zip). The minified JavaScript and CSS files can be found in the `dist/` folder and the FontAwesome and FontCustom fonts are in the `fonts/` folder. They include jQuery, all of the Bootstrap scripts and styles, FontAwesome and the custom TCU 360 font.
 
 ### Tool installation and configuration
 
