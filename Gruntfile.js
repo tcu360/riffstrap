@@ -65,7 +65,6 @@ module.exports = function(grunt) {
 
     // Clean folders before running a build
     clean: [
-      'build',
       'dist',
       'fonts'
     ],
