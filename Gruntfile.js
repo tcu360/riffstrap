@@ -141,5 +141,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('dev', ['jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts', 'concurrent']);
   grunt.registerTask('prod', ['jshint', 'clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
+  grunt.registerTask('default', 'dev');
 
 };
