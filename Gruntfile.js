@@ -82,6 +82,48 @@ module.exports = function(grunt) {
           flatten: true
         }]
       }
+    },
+
+    // A lightweight local development server
+    connect: {
+      server: {
+        options: {
+          port: 3600,
+          keepalive: true,
+          livereload: 35729,
+          open: true,
+          useAvailablePort: true
+        }
+      }
+    },
+
+    // Watch for changes in the source LESS and
+    // JavaScript files, relint/rebuild when a file
+    // changes then do a livereload
+    watch: {
+      options: {
+        livereload: 35729
+      },
+      scripts: {
+        files: ['src/**/**.js'],
+        tasks: ['jshint', 'uglify:dev']
+      },
+      styles: {
+        files: ['src/**/*.less', 'src/**/*.css'],
+        tasks: ['less']
+      },
+      markup: {
+        files: ['index.html']
+      }
+    },
+
+    // Helper to run the connect and watch tasks
+    // concurrently during development
+    concurrent: {
+        options: {
+            logConcurrentOutput: true
+        },
+        dev: ['connect', 'watch']
     }
 
   });
@@ -92,9 +134,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('dev', ['jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts']);
+  grunt.registerTask('dev', ['jshint', 'clean', 'less:dev', 'uglify:dev', 'copy:fonts', 'concurrent']);
   grunt.registerTask('prod', ['jshint', 'clean', 'less:prod', 'uglify:prod', 'copy:fonts']);
 
 };
