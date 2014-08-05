@@ -16,6 +16,15 @@ In addition to Bootstrap, this repository contains FontAwesome icons and a custo
 </span>
 ```
 
+Among other things, Riffstrap includes:
+- a single-page app skeleton, with styles that match those on tcu360.com
+- a TCU 360 [favicon](http://en.wikipedia.org/wiki/Favicon) and [apple-touch-icons](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html), which both match the ones on tcu360.com
+- Twitter's Bootstrap, customized to match the style of tcu360.com
+- Lato, the Google Font used on all TCU 360 sites
+- FontAwesome, an icon font used on many of TCU 360's sites
+- a [custom font](https://github.com/tcu360/riffstrap/tree/master/src/fontcustom) with the TCU 360 and TCU logos
+- all styles and scripts from the above, bundled into single minified files
+
 ## Usage
 
 There are several ways you can use Riffstrap in your project, from simply including the bundled JavaScript and CSS files to cloning this repository and using it as a starting point for a simple single-page app.
@@ -67,6 +76,12 @@ To bring in additional libraries, you should use [Bower](http://bower.io/). For 
 
 Once you've added something using Bower, add it to your build just like you'd add your own code using the steps under [*Adding JavaScript and LESS files*](#adding-javascript-and-less-files) above.
 
+### Customizing the markup
+
+In the `<head>` of the `index.html` file, you'll find meta tags for Facebook and Twitter. Be sure to customize those tags for your app. That's what users will see when your app is shared on Facebook and Twitter.
+
+There's a ton of example content on the page that shows off some of Bootstrap's built-in components. That can all be deleted.
+
 ### Readying for production
 
 When you're ready to push your app to production, run `grunt prod`. Doing so will follow most of the steps as `grunt dev`, except:
@@ -74,6 +89,10 @@ When you're ready to push your app to production, run `grunt prod`. Doing so wil
 - a Web server won't be started
 - your files won't be watched for changes; the task will exit and you'll need to rerun `grunt prod` to rebuild the files
 - a [source map](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/) will be generated for your JavaScript, which will make debugging much easier
+
+Be sure, before pushing to production, that you've filled in the `<title>` and `<meta>` tags in the your main HTML file. If your app is availble on the Web, you can check the tags using Facebook's [URL Linter](https://developers.facebook.com/tools/debug) and Twitter's [Card Validator](https://dev.twitter.com/docs/cards/validation/validator).
+
+If you want usage information for your app, insert your Google Analytics ID into the tracking code at the bottom of your HTML file. If not, you can safely remove the tracking code.
 
 You should also consider trimming down what's in your build, which can significantly reduce the amount of code in your app. See the [*Performance*](#performance) section below on how to do custom Bootstrap builds and reduce the size of the Webfont download.
 
